@@ -1,5 +1,47 @@
-*
+// Colors
+$main-color: #010101
+$white: #f7f7f7
+
+*,
+*:after,
+*:before
   box-sizing: border-box
-  font-family: sans-serif
   margin: 0
   padding: 0
+
+ul,
+ol
+  list-style: none
+
+h1, h2, h3, h4, h5, h6
+  margin-top: 1em
+
+body
+  width: 100vw
+  min-height: 100vh
+  // background: linear-gradient(135deg, rgba(64,231,209,1) 0%, rgba(82,255,189,1) 100%)
+  background-color: rgba(64,231,209,.9)
+  background-blend-mode: color-burn
+  background-image: url('https://github.com/brunoalv-s/slush-fullbar/blob/master/templates/assets/img/bg-code.jpg?raw=true')
+  background-position: 0 0
+  animation: 10s linear 0s normal none infinite animate
+  display: flex
+  justify-content: center
+  align-items: center
+  font-family: 'Roboto', sans-serif
+
+.container
+  max-width: 1200px
+  height: 100%
+  display: block
+  background: $white
+  padding: 1em
+  border-radius: .4em
+  box-shadow: .2em .2em 1em lighten($main-color, 40%)
+
+
+@keyframes animate
+  from
+    background-position: 0 0
+  to
+    background-position: 500px 0
