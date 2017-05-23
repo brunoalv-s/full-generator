@@ -1,47 +1,18 @@
-// Colors
-$main-color: #010101
-$white: #f7f7f7
+// 1-Settings: global variables, such as brand colours, configs etc
+// 2-Tools: mixins and helper functions
+// 3-Generic: ground zero styles, reset styles such as normalize.css
+// 4-Elements: a.k.a. Base, unclassed html elements, e.g. headings, lists, tables, this is the last layer that styles tag selectors
+// 5-Objects:  no cosmetic design patterns. Class only styles from here onwards. Classes here are loosely named and I start doing OOCSS here (e.g. .button, .list-item, grid systems etc)
+// 6-Components: rich design UI styling. Class names here are more specific. This layer usually has the biggest volume
+// 7a-Themes: if applicable, thematic styles are placed here (e.g. seasonal Christmas theme)
+// 7-Trumps: utilities, helpers and overrides. !important is often used.
 
-*,
-*:after,
-*:before
-  box-sizing: border-box
-  margin: 0
-  padding: 0
+@import 1-Settings/colors
 
-ul,
-ol
-  list-style: none
+@import 3-Generic/reset
 
-h1, h2, h3, h4, h5, h6
-  margin-top: 1em
+@import 4-Elements/base-elements
 
-body
-  width: 100vw
-  min-height: 100vh
-  // background: linear-gradient(135deg, rgba(64,231,209,1) 0%, rgba(82,255,189,1) 100%)
-  background-color: rgba(64,231,209,.9)
-  background-blend-mode: color-burn
-  background-image: url('https://github.com/brunoalv-s/slush-fullbar/blob/master/templates/assets/img/bg-code.jpg?raw=true')
-  background-position: 0 0
-  animation: 10s linear 0s normal none infinite animate
-  display: flex
-  justify-content: center
-  align-items: center
-  font-family: 'Roboto', sans-serif
+@import 5-Objects/animations
 
-.container
-  max-width: 1200px
-  height: 100%
-  display: block
-  background: $white
-  padding: 1em
-  border-radius: .4em
-  box-shadow: .2em .2em 1em lighten($main-color, 40%)
-
-
-@keyframes animate
-  from
-    background-position: 0 0
-  to
-    background-position: 500px 0
+@import 6-Components/index
